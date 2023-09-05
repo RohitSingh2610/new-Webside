@@ -54,7 +54,7 @@ body{
     padding: 20px 40px;
     top:0;
     color: #fff;
-    position: fixed;
+    /* position: fixed; */
 }
 #nav a{
     color: #fff;
