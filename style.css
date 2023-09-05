@@ -14,18 +14,37 @@ html,body{
     height: 100%;
 
 }
-/* body{
+body{
     background-color: black;
-} */
+}
+#minicircle{
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.4s;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    z-index: 99999;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.bounding{
+    width: fit-content;
+    overflow: hidden;
+    /* background-color: aqua; */
+}
+.bounding .boundingElem{
+    transform: translateY(100%);
+}
 #main{
     width: 100%;
     /* background-color: black; */
 }
+
 #hero{
     width: 100%;
     height: 100vh;
     background-color: black;
     color: #fff;
+    position: relative;
 }
 #nav{
     display: flex;
@@ -33,7 +52,9 @@ html,body{
     align-items: center;
     width: 100%;
     padding: 20px 40px;
+    top:0;
     color: #fff;
+    position: fixed;
 }
 #nav a{
     color: #fff;
@@ -56,29 +77,41 @@ margin-left: 30px;
 margin-left: 190px;
 }
 .bolcktext{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    /* background-color:red; */
     width: fit-content;
     /* background-color: aqua; */
 
 }
 .bolcktext h5{
-    text-align: right;
+    text-align: right !important;
     text-transform: uppercase;
     font-size: 1vw;
+    /* background-color: rgb(125, 159, 11); */
 }
 #heading2 {
-    margin: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-top: 100px;
+    padding-right: 50px;
+    
 }
 #heading2 h5{
     text-align: right;
     text-transform: uppercase;
     margin-top: 0.5vw;
     font-size: 1vw;
+  
+    /* margin-bottom: 20vw; */
 }
 #heroFooter{
-    margin-top: 20vw;
     width: 100%;
     bottom: 3%;
     position: absolute;
+    margin-top: 20vw;
     padding: 0vw 2vw;
     margin-top: 100px;
     display: flex;
@@ -125,18 +158,21 @@ margin-left: 190px;
    text-transform: uppercase;
    font-size: 8vw;
     opacity: 0.8;
+    padding: 2vw;
 }
 
 .elemlastborder{
     border-bottom: 1px solid #888;
 }
 .elem img{
-    position: absolute;
+    position: absolute; 
     z-index: 999;
     object-fit: cover;
     object-position:center ;
     height: 140%;
-    display: none;
+    opacity: 0;
+    /* display: none;  */
+   
 }
 #about{
   
@@ -149,6 +185,7 @@ margin-left: 190px;
     /* justify-content: space-around; */
     padding: 10vw 10vw;
     padding-left: 40vw;
+    margin-top: 20vw;
 
 }
 #imgabout img{
@@ -217,4 +254,115 @@ gap: 30px;
     color: #fff;
     margin-left: 12px;
     font-size: 14px;
+}
+@media (max-width:1000px) {
+    #about{
+        display: flex;
+        flex-direction: column;
+    }
+    #heading  #second{
+        margin-left: 12vw;
+    }
+}
+@media (max-width:600px) {
+    #foter{
+        flex-wrap: wrap;
+        
+    }
+    #footer-right{
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    #textabout{
+     width: 300px;  
+     left: 0; 
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     margin-top: -100px;
+        
+    }
+   #about #imgabout {
+        padding-bottom: 120px;
+      
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        margin-left: -30vw;
+    }
+    #textabout a{
+        width: 100px;
+    }
+    #textabout h5{
+        display: flex;
+        justify-content: flex-start;
+        font-size: 10px;
+        margin-left: -23vw;
+    }
+    #textabout p{
+        margin-left: -23vw;
+    }
+    #heading h1{
+        font-size: 9vw;
+        
+    }
+    #heading  #second{
+        margin-left: 12vw;
+    }
+    .elem h1{
+        font-size: 10vw;
+    }
+    #heroFooter{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #heroFooter h5{
+        font-size: 9vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+    #heroFooter #iconset{
+        display: none;
+    }
+    #heading h1{
+        font-size: 12vw;
+    }
+    #heading2 h5{
+        font-size: 1.3vw;
+        width: 100%;
+
+    }
+    #heading h5{
+        font-size: 3vw;
+    }
+    #nav a{
+font-size: 4vw;
+    }
+}
+@media (max-width:375px) {
+    #textabout p{
+        font-size: 6vw;
+        width: 200px;
+        margin-left: 9vw;
+    }
+    #textabout h5{
+        margin-left: 9vw;
+    }
+    #textabout a{
+        margin-left: 10vw;
+    }
+}
+@media (max-width:340px) {
+    #footer-right{
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    #pageSecond h1{
+        font-size: 12vw;
+        overflow-wrap: break-word;
+    }
+    
 }
